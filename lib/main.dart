@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
 
   double _currentMoney = 45000;
   double _month = 1;
-  double _result = 0;
 
   @override
   Widget build(BuildContext context) {
