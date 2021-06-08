@@ -71,20 +71,19 @@ class _HomePageState extends State<HomePage> {
                   const TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
             ),
             Slider(
-                value: _month,
-                min: 1,
-                max: 12,
-                divisions: 12,
-                label: _month.toInt().toString(),
-                onChanged: (value) => setState(() => _month = value)),
+              value: _month,
+              min: 1,
+              max: 12,
+              divisions: 12,
+              label: _month.toInt().toString(),
+              onChanged: (value) => setState(() => _month = value),
+            ),
             Text(
               _month.toInt().toString() + " месяц",
               style:
                   const TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
-              height: 50.0,
-            ),
+            const SizedBox(height: 50.0),
             Text(
               "В месяц платите: " +
                   getMonthPay(_currentMoney.toInt(), _month.toInt())
@@ -92,18 +91,14 @@ class _HomePageState extends State<HomePage> {
                   " тг",
               style: const TextStyle(fontSize: 18.0),
             ),
-            const SizedBox(
-              height: 30.0,
-            ),
+            const SizedBox(height: 30.0),
             Text(
               "Первоначальный взнос: " +
                   getFirstContribution(_currentMoney.toInt()).toString() +
                   " тг",
               style: const TextStyle(fontSize: 18.0),
             ),
-            const SizedBox(
-              height: 60.0,
-            ),
+            const SizedBox(height: 60.0),
             MaterialButton(
               padding: const EdgeInsets.only(
                 top: 18,
