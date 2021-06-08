@@ -4,6 +4,8 @@ import 'package:halalcredit/functions.dart';
 import 'package:superellipse_shape/superellipse_shape.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'config.dart';
+
 void main() {
   runApp(App());
 }
@@ -95,8 +97,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               "Первоначальный взнос: " +
-                  getFirstContribution(_currentMoney.toInt(), _month.toInt())
-                      .toString() +
+                  getFirstContribution(_currentMoney.toInt()).toString() +
                   " тг",
               style: const TextStyle(fontSize: 18.0),
             ),
@@ -119,12 +120,9 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              shape: SuperellipseShape(
-                borderRadius: BorderRadius.circular(28.0),
-              ),
-              onPressed: () => launch(
-                "https://cabinet.halalcredit.kz/ru/order/create?ref_id=48058804",
-              ),
+              shape:
+                  SuperellipseShape(borderRadius: BorderRadius.circular(28.0)),
+              onPressed: () => launch(SITE_URL),
             )
           ],
         ),
