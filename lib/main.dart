@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:halalcredit/components/open_link_button.dart';
 import 'package:halalcredit/functions.dart';
-import 'package:superellipse_shape/superellipse_shape.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import 'config.dart';
+import 'components/header_info.dart';
 
 void main() {
   runApp(App());
@@ -45,15 +44,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(14.0),
-                child: const Text(
-                  'Получит займ без процентов, просрочек',
-                  style: const TextStyle(fontSize: 20.0),
-                ),
-              ),
-            ),
+            HeaderInfo(),
             const SizedBox(
               height: 30.0,
             ),
@@ -80,8 +71,10 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               _month.toInt().toString() + " месяц",
-              style:
-                  const TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 50.0),
             Text(
@@ -99,26 +92,7 @@ class _HomePageState extends State<HomePage> {
               style: const TextStyle(fontSize: 18.0),
             ),
             const SizedBox(height: 60.0),
-            MaterialButton(
-              padding: const EdgeInsets.only(
-                top: 18,
-                bottom: 18,
-                right: 25,
-                left: 25,
-              ),
-              color: Colors.redAccent,
-              textColor: Colors.white,
-              child: const Text(
-                "Получит халал займ",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              shape:
-                  SuperellipseShape(borderRadius: BorderRadius.circular(28.0)),
-              onPressed: () => launch(SITE_URL),
-            )
+            ButtonOpenLink(),
           ],
         ),
       ),
