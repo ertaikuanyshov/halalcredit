@@ -5,9 +5,7 @@ import 'package:halalcredit/functions.dart';
 
 import 'components/header_info.dart';
 
-void main() {
-  runApp(App());
-}
+void main() => runApp(App());
 
 class App extends StatelessWidget {
   @override
