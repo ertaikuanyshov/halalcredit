@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:halalcredit/components/open_link_button.dart';
+import 'package:halalcredit/config.dart';
 import 'package:halalcredit/functions.dart';
 
 import 'components/header_info.dart';
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Халал Кредит | Калкульятор"),
+        title: const Text(TITLE),
       ),
       body: SingleChildScrollView(
         child: Column(
